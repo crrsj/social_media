@@ -1,7 +1,6 @@
 package com.api.sm.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.grammars.hql.HqlParser;
 
 @Entity
 @Table(name = "roles")
@@ -36,12 +35,12 @@ public class Role {
     public void setName(String name) {
         this.name = name;
     }
-   public enum Valuie{
+   public enum Value {
         BASIC(2L),
        ADMIN(1L);
         Long roleId;
 
-       Valuie(Long roleId) {
+       Value(Long roleId) {
            this.roleId = roleId;
        }
    }

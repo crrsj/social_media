@@ -12,8 +12,13 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "post_id")
     private Long postId;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
     private String content;
+    @CreationTimestamp
+    private Instant creationTimestamp;
 
     public Post(Long postId, User user, String content, Instant creationTimestamp) {
         this.postId = postId;
@@ -57,8 +62,7 @@ public class Post {
         this.creationTimestamp = creationTimestamp;
     }
 
-    @CreationTimestamp
-    private Instant creationTimestamp;
+
 
 
 }
